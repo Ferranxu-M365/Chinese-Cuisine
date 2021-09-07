@@ -1,0 +1,11 @@
+<% if(messages.success.length !== 0){  %>
+    <div id="notification" class="success-notification">
+        <%= messages.success %>
+    </div>
+<% } %>
+
+<% if(messages.error.length !== 0){  %>
+    <div id="notification" class="danger-notification">
+        <%= messages.error %>
+    </div>
+<% } %>

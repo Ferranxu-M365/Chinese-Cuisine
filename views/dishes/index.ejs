@@ -1,0 +1,13 @@
+<% layout('./layouts/boilerplate') -%>
+<%- include('../partials/notifications') %> 
+<div class="content">
+    <div class="center-element">
+        <a class="a-button" href="/dishes/new">Add a new dish</a>
+    </div>
+    <div class="dish-list">
+    </div>
+    <div id='loader' class="center-element">
+        <div class="load-more hide"></div>
+    </div>
+</div>
+<script src="/js/getDishes.js"></script>

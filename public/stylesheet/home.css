@@ -1,0 +1,77 @@
+body {
+    background-image: url('/images/homeImage.jpg');
+    background-size:cover;
+    background-position:center;
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper {
+    background-color: hsla(0, 0%, 0%, 0.8);
+    color: wheat;
+    border-radius: 10px;
+    width: 40vw;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#wrapper .a-button {
+    background-color: hsla(44, 60%, 45%);
+    padding: 6px;
+    color: hsl(61, 100%, 91.2%);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    align-self: center;
+}
+
+#wrapper .a-button:hover {
+    background-color: hsla(44, 60%, 50%);
+}
+
+@media (max-width: 485px) {
+    h1 {
+        font-size: 0.9rem;
+    }
+
+    #wrapper {
+        font-size: 0.8rem;
+        width: 90vw;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+
+    footer a {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-height: 485px) {
+    h1 {
+        font-size: 0.5rem;
+    }
+
+    #wrapper {
+        font-size: 0.4rem;
+        width: 50vw;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+
+    footer a {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,224 @@
+/*
+    Global
+*/
+body {
+    color: hsl(61, 100%, 91.2%);
+    background-image: linear-gradient(60deg, hsl(0, 0%, 13%), hsl(0, 0%, 18%));
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content {
+    height: 100%;
+    width:  100%;
+    padding: 50px 150px 50px 150px;
+}
+
+a {
+    text-decoration: none;
+    color: hsl(61, 100%, 91.2%);;
+}
+
+a:hover {
+    text-decoration: none;
+    color: hsl(61, 100%, 91.2%);;
+}
+
+div.success-notification {
+    transition: 1s all;
+    position: absolute;
+    width: 300px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: hsl(99.4, 54%, 75.88%);
+}
+
+div.danger-notification {
+    transition: 1s all;
+    position: absolute;
+    width: 300px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(238, 71, 71, 0.712);
+}
+
+header {
+    background-color: hsla(44, 88%, 30%, 0.397);
+}
+
+nav {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    padding: .8rem 1rem;
+}
+
+.nav-link {
+    font-weight: 600;
+    font-size: 15px;
+    color: hsl(61, 100%, 91.2%);
+    padding: 0 30px 0 0;
+}
+
+.nav-link:hover {
+    color: white;
+    text-shadow: 0px 0px 10px rgba(193,216,0,1);
+}
+
+footer {
+    margin-top: auto;
+    background-color: hsla(44, 88%, 30%, 0.397);
+}
+
+footer a {
+    font-weight: 600;
+    font-size: 15px;
+    color: hsl(61, 100%, 91.2%);
+}
+
+footer a:hover {
+    color: white;
+    text-shadow: 0px 0px 10px rgba(193,216,0,1);
+}
+
+.a-button {
+    width: auto;
+    background-color: hsla(44, 60%, 45%);
+    padding: 6px;
+    color: hsl(61, 100%, 91.2%);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    align-self: center;
+}
+
+.a-button:hover {
+    background-color: hsla(44, 60%, 50%);
+    color: hsl(61, 100%, 91.2%);
+}
+
+.a-button-empty {
+    width: auto;
+    padding: 6px;
+    color: hsl(61, 100%, 91.2%);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    align-self: center;
+    border: solid 1px hsla(44, 60%, 50%);
+    transition: all 0.5s;
+}
+
+.a-button-empty:hover {
+    background-color: hsla(44, 60%, 50%);
+    color: hsl(61, 100%, 91.2%);
+}
+
+.a-button-danger {
+    background-color: transparent;
+    width: auto;
+    padding: 6px;
+    color: hsl(61, 100%, 91.2%);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    align-self: center;
+    border: solid 1px hsl(0, 50%, 50%);
+    transition: all 0.5s;
+}
+
+.a-button-danger:hover {
+    background-color: hsl(0, 50%, 50%);
+}
+
+.hide {
+    opacity: 0;
+}
+
+.center-element{
+    display: flex;
+    justify-content: center;
+}
+
+.nav-toggle-checkbox {
+    position: absolute;
+    transform: scale(0);
+}
+
+.label-nav-toggle {
+    position: absolute;
+    transform: scale(0);
+}
+
+@media screen and (max-width: 815px) {
+    nav {
+        display: block;
+        padding: 0;
+        justify-content: unset;
+        align-items: unset;
+        transform: scale(0);
+    }
+
+    .nav-link {
+        padding: .8rem 1rem;
+        background-color: hsla(44, 88%, 30%, 0.8);
+    }
+
+    .nav-toggle {
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        margin-left: 20px;
+        background-color: wheat;
+        top: .5em;
+        transform: scale(1);
+    }
+
+    .nav-toggle::before {
+        content: '';
+        position: absolute;
+        opacity: 1;
+        width: 30px;
+        height: 2px;
+        background-color: wheat;
+        top: 0.85em;
+    }
+
+    .nav-toggle::after {
+        content: '';
+        position: absolute;
+        opacity: 1;
+        width: 30px;
+        height: 2px;
+        background-color: wheat;
+        top: 1.75em;
+        left: 0;
+    }
+
+    .label-nav-toggle {
+        position: absolute;
+        transform: scale(1);
+        width: 55px;
+        height: 50px;
+    }
+
+    .nav-toggle-checkbox:checked ~ nav {
+        transform: scale(1);
+        position: relative;
+        width: 100%;
+        top: 3rem;
+    }
+}

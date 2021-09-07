@@ -1,0 +1,17 @@
+<header>
+    <label for="nav-toggle-checkbox" class="label-nav-toggle">
+        <div class="nav-toggle"></div>
+    </label>
+    <input id="nav-toggle-checkbox" class="nav-toggle-checkbox" type="checkbox">
+    <nav>
+        <a class="nav-link" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/dishes/chinesedishes">Dishes</a>
+        <a class="nav-link" href="/about" tabindex="-1" aria-disabled="true">About</a>
+        <% if(!currentUser){ %> 
+        <a class="nav-link" aria-current="page" href="/login">Login</a>
+        <a class="nav-link" href="/register">Register</a>
+        <% }else{ %> 
+        <a class="nav-link" href="/logout">Logout</a>
+        <% } %>
+    </nav>
+</header>

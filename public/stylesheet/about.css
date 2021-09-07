@@ -1,0 +1,281 @@
+body {
+    height: 100vh;
+}
+
+.content {
+    height: 100%;
+    width:  100%;
+    display: flex;
+    padding: 0px;
+}
+
+/*
+    About Page
+*/
+main {
+    width: 100%;
+    height: 100%;
+}
+
+#left-div {
+    width: 50%;
+    height: 100%;
+    background-image: url('/images/leftDiv.jpg');
+    background-size:cover;
+    background-position:center;
+}
+
+#right-div {
+    margin-top: 20vh;
+    margin-left: -10vw;
+    width: 45rem;
+    height: 20rem;
+    background-color: hsl(41, 30%, 30%);
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    text-align: justify;
+}
+
+.info {
+    width: 95%;
+    padding-right: 5%;
+}
+
+.social-media {
+    width: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#profile-image {
+    background-image: url("/images/aboutPic.jpg");
+    background-size:cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    float: left;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+#heart {
+    margin-bottom: 30px;
+    width: 45px;
+    height: 45px;
+    background-image: url('/images/aboutHeart.svg');
+    background-size:cover;
+    transition: all 0.8s;
+}
+
+#heart:hover {
+    transform: scale(1.1);
+}
+
+#linkedin {
+    margin-bottom: 30px;
+    width: 45px;
+    height: 45px;
+    background-image: url('/images/linkedinLogo.png');
+    background-size:cover;
+    transition: all 0.8s;
+}
+
+#linkedin:hover {
+    transform: scale(1.1);
+}
+
+#github {
+    width: 45px;
+    height: 45px;
+    background-image: url('/images/github.png');
+    background-size:cover;
+    transition: all 0.8s;
+}
+
+#github:hover {
+    transform: scale(1.1);
+}
+
+.icon-description {
+    width: 10rem;
+    height: 100%;
+    padding-left: 5px;
+    position: relative;
+    left:80px;
+    border-left: solid 2px hsl(41, 30%, 30%);
+    display: flex;
+    align-items: center;
+    transition: all 0.8s;
+}
+
+@media (max-width: 1520px) {
+    #right-div {
+        height: 24rem;
+        flex-direction: column;
+    }
+
+    .social-media {
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #heart {
+        margin: 0px;
+    }
+    
+    #linkedin {
+        margin: 0px;
+    }
+    
+    #github {
+        margin: 0px;
+    }
+
+    .icon-description {
+        padding-left: 5px;
+        position: relative;
+        left: -60px;
+        top: 80px;
+        border-left: none;
+        border-top: solid 2px hsl(41, 30%, 30%);
+        display: flex;
+        justify-content: center;
+        transition: all 0.8s;
+    }
+}
+
+@media (max-width: 815px) {
+    .content {
+        flex-flow: wrap-reverse;
+    }
+
+    #right-div {
+        margin-left: 0px;
+        margin-top: 0px;
+        width: 50%;
+        height: 100%;
+        flex-direction: column;
+        background-color: transparent;
+        padding-right: 0px;
+    }
+
+    .info {
+        width: 90%;
+        height: 90%;
+    }
+
+    .social-media {
+        width: 95%;
+        height: 10%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: hsl(41, 30%, 30%);
+        border-radius: 10px;
+    }
+
+    #heart {
+        margin: 0px;
+    }
+    
+    #linkedin {
+        margin: 0px;
+    }
+    
+    #github {
+        margin: 0px;
+    }
+
+    .icon-description {
+        padding-left: 5px;
+        position: relative;
+        left: -60px;
+        top: 80px;
+        border-left: none;
+        border-top: solid 2px hsl(41, 30%, 30%);
+        display: flex;
+        justify-content: center;
+        transition: all 0.8s;
+    }
+}
+
+@media (max-width: 815px) and (orientation: landscape) {
+    body {
+        height: 100%;
+    }
+
+    #right-div {
+        margin-left: 0px;
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background-color: transparent;
+        padding-right: 0px;
+    }
+}
+
+@media (max-width: 550px) {
+    .content {
+        flex-flow: wrap-reverse;
+    }
+
+    #right-div {
+        margin-left: 0px;
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background-color: transparent;
+        padding-right: 0px;
+    }
+
+    #left-div {
+        width: 0%;
+    }
+
+    .info {
+        width: 90%;
+        height: 90%;
+    }
+
+    .social-media {
+        width: 95%;
+        height: 10%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: hsl(41, 30%, 30%);
+        border-radius: 10px;
+    }
+
+    #heart {
+        margin: 0px;
+    }
+    
+    #linkedin {
+        margin: 0px;
+    }
+    
+    #github {
+        margin: 0px;
+    }
+
+    .icon-description {
+        padding-left: 5px;
+        position: relative;
+        left: -60px;
+        top: 80px;
+        border-left: none;
+        border-top: solid 2px hsl(41, 30%, 30%);
+        display: flex;
+        justify-content: center;
+        transition: all 0.8s;
+    }
+}

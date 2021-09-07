@@ -1,0 +1,55 @@
+<% layout('./layouts/boilerplate') -%>
+<h1><%= dish.title %></h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 d-flex flex-column">
+            <form method="POST" action="/dishes/<%= dish._id %>?_method=PATCH" class="needs-validation" enctype="multipart/form-data" novalidate>
+                <div class="mb-3 mt-5">
+                    <label for="name" class="form-label">Name</label>
+                    <input name="name" id="name" value="<%= dish.title %>" class="form-control" required />
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" name="image" id="image" class="form-control" />
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div>
+                        Current image
+                        <img src="<%= dish.image.path %>" alt="The dish!" class="img-fluid dish-img">
+                        <% if(dish.image.filename !== 'noPhoto_ylfvnz'){ %>
+                        <input type="checkbox" class="hide" name="deleteImage" id="deleteImage" value="<%= dish.image.filename %>">
+                        <label for="deleteImage" class="a-button-empty">Delete image</label>
+                        <% }else{} %> 
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="description" id="description" class="form-control" required><%= dish.description %></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input name="location" id="location" value="<%= dish.location %>" class="form-control" required />
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-2">
+            <a href="/dishes/<%= dish.id %> " class="btn btn-dark">Go Back</a>
+        </div>
+    </div>
+</div>

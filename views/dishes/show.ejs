@@ -1,0 +1,91 @@
+<% layout('./layouts/boilerplate') -%>
+<div class="content">
+    <%- include('../partials/notifications') %> 
+    <div class="button-bar">
+        <div>
+            <a href="/dishes/chinesedishes" class="a-button">Go Back</a>
+        </div>
+        <% if(currentUser && currentUser._id.toString() === dish.author._id.toString()){ %> 
+        <div class="dish-buttons">
+            <a class="a-button-empty" href="/dishes/<%= dish._id %>/edit">Edit Dish</a>
+            <form method="POST" action="/dishes/<%= dish._id %>?_method=Delete" style="display: inline;">
+                <button class="a-button-danger delete-dish-button">Delete Dish</button>
+            </form>
+        </div>
+        <% } %>
+    </div>
+    <div class="dish">
+        <div class="dish-image-div">
+            <img src="<%= dish.image.path %>" alt="The dish!" class="dish-image">
+        </div>
+        <div class="dish-body">
+            <h1><%= dish.title %></h1>
+            <div class="dish-tags">
+                <div class="author-tag">Author: <%= dish.author.username %></div>
+                <div class="location-tag">Location: <%= dish.location %></div>
+            </div>
+            <div>
+                <h6>Description</h6>
+                <p><%= dish.description %></p>
+            </div>
+        </div>
+    </div>
+    <div class="dish-review">
+        <div class="submit-review">
+            <form action="/dishes/<%= dish.id %>/reviews" method="POST" class="needs-validation" novalidate>
+                <div class="d-flex-row">
+                    <div>
+                        <b>Rating:</b>
+                        <fieldset class="starability-basic">
+                            <input type="radio" id="no-rate" class="input-no-rate" name="reviewRating" value="1" checked aria-label="No rating." />
+                            <input type="radio" id="rate1" name="reviewRating" value="1" />
+                            <label for="rate1" title="Terrible">1 star</label>
+                            <input type="radio" id="rate2" name="reviewRating" value="2" />
+                            <label for="rate2" title="Not good">2 stars</label>
+                            <input type="radio" id="rate3" name="reviewRating" value="3" />
+                            <label for="rate3" title="Average">3 stars</label>
+                            <input type="radio" id="rate4" name="reviewRating" value="4" />
+                            <label for="rate4" title="Very good">4 stars</label>
+                            <input type="radio" id="rate5" name="reviewRating" value="5" />
+                            <label for="rate5" title="Amazing">5 stars</label>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <label for="reviewBody" class="form-label">Review</label>
+                        <textarea name="reviewBody" class="form-control" required></textarea>
+                    </div>
+                    <div class="d-flex justify-content-end mt-2">
+                        <button class="a-button">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="dish-reviews">
+        <div class="reviews">
+            <b class="comments-title">Comments</b>
+            <% for(let review of dish.reviews){ %>
+            <div class="review">
+                <div class="review-text">
+                    <p><%= review.body %></p>
+                </div>
+                <div>
+                    <p class="starability-result" data-rating="<%= review.rating %>"></p>
+                </div>
+            </div>
+            <div class="footer-review">
+                <div>
+                    <i class="author-review">Author: <%= review.author.username %></i>
+                </div>
+                <% if(currentUser && review.author._id.toString() === currentUser._id.toString()){ %> 
+                <div class="delete-dish-button">
+                    <form action="/dishes/<%= dish.id %>/reviews/<%= review.id %>?_method=DELETE" method="POST">
+                        <button class="a-button-danger">Delete</button>
+                    </form>
+                </div>
+                <% } %> 
+            </div>
+            <% } %> 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+.a-button-empty {
+    text-align: center;
+    width: fit-content;
+}
+
+#deleteImage:checked ~ label {
+    background-color: hsla(44, 60%, 50%);
+}

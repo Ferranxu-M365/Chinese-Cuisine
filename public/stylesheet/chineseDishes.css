@@ -1,0 +1,50 @@
+.dish-card {
+    min-width: 370px;
+    height: 20em;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 3px;
+    transition: all 2s;
+}
+
+.dish-card-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.dish-card-wrapper:hover {
+    opacity: 0;
+}
+
+.dish-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.load-more {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid hsla(44, 60%, 50%); /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.no-more-dishes{
+    padding: 6px;
+    color: hsl(61, 100%, 91.2%);
+    margin: 20px 0;
+}
